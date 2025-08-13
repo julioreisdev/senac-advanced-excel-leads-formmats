@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio: Higienização de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS Integrado */
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+
+      header img {
+        width: 40px;
+        height: auto;
+        margin-right: 15px;
+      }
+
+      header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a73e8;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 22px;
+        font-weight: 500;
+        color: #1a73e8;
+        border-bottom: 2px solid #1a73e8;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+
+      p,
+      li {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #5f6368;
+      }
+
+      strong {
+        color: #202124;
+      }
+
+      .instructions ol {
+        padding-left: 20px;
+      }
+
+      .instructions li {
+        margin-bottom: 10px;
+      }
+
+      .format-highlight {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #e8f0fe;
+        color: #1967d2;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .resources {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      #downloadBtn {
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      #downloadBtn:hover {
+        background-color: #185abc;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #9aa0a6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img
+          src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"
+          alt="Logo Decorativo"
+        />
+        <h1>Desafio: Higienização e Análise de Dados</h1>
+      </header>
+
+      <section class="story">
+        <h2>Nossa Missão</h2>
+        <p>
+          Bem-vindo(a) à equipe de migração de dados da
+          <strong>ConnectaSolutions!</strong>
+        </p>
+        <p>
+          Nossa empresa está passando por uma grande modernização e vamos
+          aposentar nosso sistema antigo de contatos. Estamos implementando um
+          novo e poderoso sistema de CRM chamado <strong>"Nexus"</strong>. O
+          problema? O "Nexus" é muito rigoroso com a qualidade dos dados que ele
+          aceita.
+        </p>
+        <p>
+          Ao longo do último ano, nossos vendedores cadastraram os contatos
+          (leads) de qualquer jeito. Agora, temos uma base de dados com nomes e
+          telefones em formatos variados, com erros, em branco e até com números
+          inválidos. Sua missão, como especialista em dados, é limpar essa base
+          para que possamos importá-la para o "Nexus" sem erros.
+        </p>
+        <p>
+          O novo sistema só aceita números de telefone no formato padrão
+          brasileiro:
+          <strong class="format-highlight">+55 (XX) X XXXX-XXXX</strong>.
+        </p>
+      </section>
+
+      <section class="instructions">
+        <h2>Suas Tarefas</h2>
+        <p>
+          Esta atividade deverá ser realizada em <strong>duplas</strong>.
+          Colaborem para encontrar as melhores soluções!
+        </p>
+        <ol>
+          <li>
+            <strong>Baixe a base de dados</strong> de leads clicando no botão
+            abaixo.
+          </li>
+          <li>
+            Abra o arquivo CSV no Excel e
+            <strong>analise os problemas</strong> existentes nos nomes e
+            telefones.
+          </li>
+          <li>
+            <strong>Limpe e padronize os nomes</strong>, removendo espaços
+            extras e ajustando a capitalização (letras maiúsculas/minúsculas).
+          </li>
+          <li>
+            <strong>Trate os números de telefone</strong>, identificando e
+            lidando com os que estão em branco ou são inválidos (muito curtos).
+          </li>
+          <li>
+            Para os números válidos mas mal formatados, use fórmulas para
+            <strong>convertê-los ao formato padrão</strong> exigido pelo sistema
+            "Nexus".
+          </li>
+          <li>
+            Crie uma pequena análise respondendo:
+            <strong
+              >Qual o percentual de números que estavam incorretos (incluindo em
+              branco e inválidos) na base de dados original?</strong
+            >
+          </li>
+          <li>
+            <strong>Envie o arquivo final</strong> (Excel com os dados
+            corrigidos e a análise) para o e-mail:
+            <a
+              href="mailto:juliopais@pi.senac.br"
+              style="color: #1967d2; font-weight: bold"
+              >juliopais@pi.senac.br</a
+            >.
+          </li>
+        </ol>
+      </section>
+
+      <section class="resources">
+        <h2>Recursos</h2>
+        <p>
+          Clique no botão abaixo para fazer o download da base de dados e
+          começar o desafio.
+        </p>
+        <button id="downloadBtn">Baixar Lista de Leads (.csv)</button>
+      </section>
+
+      <footer>
+        <p>Senac - Curso de Excel Avançado</p>
+        <p>Júlio Reis, Instrutor de Tecnologia do Senac</p>
+      </footer>
+    </div>
+
+    <script>
+      // JavaScript Integrado
+      const downloadButton = document.getElementById("downloadBtn");
+
+      downloadButton.addEventListener("click", () => {
+        // Conteúdo do CSV embutido diretamente no código
+        const csvContent = `Nome,Telefone
+ HEITOR SOUZA ,+55 (28) 9 1706-9937
+arthur fernandes,+55 (32) 9 4853-6192
+ davi carvalho ,95 93613 5702
+ bernardo fernandes ,30044
+SOPHIA SOARES,
+GABRIEL FERREIRA,86090
+Noah Lima,+5544924995327
+Miguel Oliveira,(73) 91364-5495
+ DAVI FERNANDES ,86588
+Davi Ribeiro,+55 (52) 9 2424-6194
+CECÍLIA COSTA,25 951903076
+ISABELLA GOMES,049937491962
+BERNARDO SANTOS,069938863594
+Cecília Martins,+55 (20) 9 1811-3197
+MIGUEL RODRIGUES,(48) 98217-7434
+Helena Pereira,(61)93126-5671
+RAVI CARVALHO,16993462050
+LIZ SILVA,
+maitê ferreira,035916381381
+DAVI CARVALHO,037999589313
+maitê gomes,+55 (98) 9 8807-3023
+HELENA ALVES,
+davi almeida,
+THÉO COSTA,97359
+bernardo alves,87 997577543
+MANUELA ALMEIDA,(83)98991-3832
+théo rodrigues,(83) 98322-8616
+CECÍLIA LIMA,96985002061
+LIZ ALMEIDA,(93) 965154332
+liz soares,+55 (62) 9 9370-1288
+bernardo alves,+55 (80) 9 7356-9141
+NOAH LOPES,
+BERNARDO FERREIRA,
+davi alves,031974917409
+DAVI OLIVEIRA,
+LIZ ALMEIDA,(73)99688-6677
+isabella rodrigues,85987
+liz pereira,
+HELENA ALMEIDA,91 979727783
+MANUELA LOPES,+55 (17) 9 1969-2475
+ heitor carvalho ,94468
+helena pereira,+5524978716298
+BERNARDO PEREIRA,
+liz vieira,
+noah carvalho,+5566981881519
+laura santos,11993444453
+ARTHUR ALMEIDA,013978583488
+heitor almeida,
+Théo Rodrigues,(61) 94840-3343
+MANUELA RODRIGUES,+55 (59) 9 1251-5182
+Cecília Lima,(32) 95535-7140
+MIGUEL MARTINS,48995886617
+MARIA ALICE LIMA,+55 (38) 9 8645-0370
+ARTHUR GOMES,(73)98242-7802
+helena carvalho,+55 (59) 9 7205-3642
+ARTHUR COSTA,28825
+ théo santos ,98862
+ isabella rodrigues ,
+LAURA LOPES,
+MIGUEL ALVES,
+HELENA ALMEIDA,
+miguel gomes,14 976378413
+NOAH ALMEIDA,26 97893 2598
+davi almeida,+55 (92) 9 2928-1110
+Gael Costa,(35) 98660-8488
+heitor alves,047976866205
+MIGUEL LOPES,57 99878 1264
+DAVI PEREIRA,
+ théo ferreira ,92350
+NOAH ALVES,29 976861541
+noah alves,75971553381
+miguel almeida,+55 (37) 9 9338-8422
+LIZ ALVES,(88)98661-8974
+manuela almeida,(13) 98579-2479
+miguel carvalho,+55 (14) 9 1813-0570
+cecília costa,039981859942
+Sophia Lima,46280
+Laura Ribeiro,074983050965
+DAVI SOARES,
+Sophia Costa,077983638459
+Gael Santos,15886
+HEITOR GOMES,+55 (90) 9 8408-0112
+cecília souza,37 99313 7776
+Davi Lima,+55 (46) 9 9993-4122
+Gael Ribeiro,44131
+laura almeida,
+ théo almeida ,
+heitor almeida,73995393228
+CECÍLIA RODRIGUES,89551
+SOPHIA ALMEIDA,
+HEITOR ALMEIDA,(33) 93427-0238
+davi alves,
+ noah lopes ,(71) 962539958
+liz gomes,
+isabella rodrigues,17997977465
+Laura Ribeiro,40 972605156
+heitor alves,
+SOPHIA PEREIRA,(31)97486-0684
+Gael Oliveira,76779
+THÉO PEREIRA,(56) 97725-7801
+noah santos,
+davi almeida,(55)98933-2884
+MANUELA SANTOS,
+davi alves,086976269420
+ARTHUR ALMEIDA,21 99238 6831
+Heitor Lima,
+cecília pereira,
+isabella oliveira,
+DAVI LOPES,92850
+ARTHUR ALMEIDA,(61) 98801-4433
+davi lopes,(76) 97752-1925
+cecília alves,
+ théo ferreira ,(26) 98254-4903
+Liz Souza,
+isabella vieira,
+MIGUEL GOMES,32 99518 7323
+MAITÊ LIMA,(67) 987729221
+DAVI GOMES,(86) 99882 1731
+cecília lima,(28)98822-4468
+LAURA SILVA,
+GABRIEL GOMES,51 97793 4296
+ARTHUR COSTA,
+davi gomes,11 989254019
+Laura Santos,97987515082
+ heitor rodrigues ,92290
+Arthur Souza,45 98453 7964
+THÉO PEREIRA,39851
+BERNARDO ALVES,(25) 983226177
+LAURA MARTINS,(45) 97233 4699
+ théo alves ,85362
+laura fernandes,(24) 997640327
+bernardo ferreira,(15)99684-2575
+miguel rodrigues,
+gael rodrigues,
+LIZ SOARES,(54) 979313498
+MAITÊ PEREIRA,
+LAURA RODRIGIGUES,+55 (18) 9 4601-3837
+LAURA GOMES,54339
+cecília almeida,(23) 993175113
+théo almeida,
+Cecília Santos,48 97950 5147
+GABRIEL SILVA,21 978933221
+davi gomes,
+isabella pereira,
+GABRIEL RODRIGUES,(29) 98572 7323
+MANUELA MARTINS,
+Sophia Soares,(59)99676-5749
+heitor alves,(62) 99378 1391
+GABRIEL RODRIGUES,85152
+ heitor rodrigues ,(42) 983261623
+THÉO GOMES,042999485741
+ALICE SILVA,
+cecília alves,(32) 99201 1904
+heitor silva,+55 (79) 9 9239-6617
+GABRIEL OLIVEIRA,
+Gael Rodrigues,92 98826 6205
+théo lima,
+GABRIEL SILVA,47715
+arthur lopes,
+MANUELA MARTINS,
+HELENA ALMEIDA,91 976219468
+heitor alves,
+laura souza,047974378873
+davi gomes,043987955512
+davi carvalho,+55 (80) 9 1198-2924
+théo almeida,
+heitor santos,
+liz rodrigues,
+Sophia Santos,
+Arthur Ferreira,25 979109015
+ isabella ferreira ,+55 (83) 9 9231-8975
+DAVI ALMEIDA,21989047999
+isabella rodrigues,21981
+ARTHUR OLIVEIRA,+55 (63) 9 3215-6490
+DAVI PEREIRA,(97)98409-5838
+davi almeida,
+maitê alves,
+miguel rodrigues,
+RAVI PEREIRA,
+théo souza,
+cecília lima,
+Davi Ferreira,99914197364
+BERNARDO LIMA,+55 (63) 9 9509-3286
+RAVI MARTINS,
+miguel almeida,
+Gael Souza,
+bernardo almeida,(58) 991809071
+théo alves,
+miguel rodrigues,
+Ravi Lima,(81)97486-5390
+HELENA LOPES,22978396590
+THÉO LIMA,
+davi rodrigues,
+NOAH PEREIRA,
+cecília pereira,
+Davi Martins,(87) 97411-9659
+DAVI OLIVEIRA,(15) 998980313
+ heitor ferreira ,14995952766
+HELENA GOMES,
+davi almeida,+55 (71) 9 8838-8974
+Davi Lima,
+maitê oliveira,
+MIGUEL ALMEIDA,
+ heitor almeida ,
+ théo ferreira ,(25) 996388439
+ARTHUR COSTA,
+cecília alves,(36) 991811831
+arthur santos,
+LAURA LOPES,(76) 971848529
+DAVI ALMEIDA,
+isabella rodrigues,
+théo rodrigues,(75) 997626918
+miguel ferreira,
+ théo ferreira ,21287
+davi carvalho,(29) 97906 3858
+davi ferreira,+55 (38) 9 9621-3444
+noah ferreira,(41) 99424 1637
+théo rodrigues,
+GABRIEL COSTA,
+LIZ FERREIRA,
+davi alves,078972621415
+ manuela lopes ,
+SOPHIA MARTINS,
+miguel almeida,(33)98935-7722
+Gael Santos,
+Sophia Rodrigues,(84) 99787-8488
+théo ferreira,036987796472
+heitor gomes,
+BERNARDO LIMA,
+bernardo rodrigues,
+Gael Lima,+55 (71) 9 5275-3850
+bernardo ferreira,
+miguel alves,
+manuela oliveira,043981881519
+davi soares,
+SOPHIA SILVA,
+Sophia Lima,
+DAVI GOMES,(47) 97451 1234
+BERNARDO MARTINS,
+ manuela ferreira ,014972166540
+maitê lopes,
+MANUELA ALVES,
+Arthur Lima,061988899532
+Davi Martins,(17) 97263-1996
+liz santos,017983196924
+GABRIEL PEREIRA,(80) 97135 6323
+ théo lopes ,
+bernardo ferreira,
+noah lima,
+GABRIEL SOARES,14 97669 8222
+MANUELA COSTA,(55)97645-0951
+miguel almeida,
+ARTHUR ALMEIDA,
+Sophia Martins,66 99304 1989
+Maria Alice Santos,968099193
+HELENA BARBOSA,(85) 97574-8042
+MANUELA COSTA,+55 (64) 9 2378-4280
+MAITÊ COSTA,(74) 968531090
+GABRIEL OLIVEIRA,+55 (66) 9 6376-7259
+helena lopes,+55 (87) 9 9194-7968
+bernardo ribeiro,987772028
+ ISABELLA BARBOSA ,+55 (50) 9 6131-4968
+Liz Silva,(52) 986338949
+Miguel Alves,(74) 97975-9514
+alice santos,(56) 98760-3448
+LIZ OLIVEIRA,(90)91942-9669
+ Maria Alice Carvalho ,86977409029
+isabella fernandes,+55 (45) 9 8590-4880
+Davi Fernandes,94 985518845
+ Alice Almeida ,+55 (25) 9 5602-5475
+ Ravi Pereira ,+5597999115888
+laura ferreira,77941502246
+Laura Santos,+55 (75) 9 3788-2947`;
+
+        // Criar um Blob (Binary Large Object)
+        const blob = new Blob([csvContent], {
+          type: "text/csv;charset=utf-8;",
+        });
+
+        // Criar um link temporário para o download
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "leads_para_limpeza.csv");
+
+        // Simular o clique no link
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    </script>
+  </body>
+</html>
